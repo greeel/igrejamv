@@ -1,0 +1,97 @@
+/* Adicionar imagem de fundo */
+body {
+    position: relative; /* Para o posicionamento absoluto do pseudo-elemento */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pseudo-elemento para escurecer a imagem de fundo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fundo.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área visível */
+    background-repeat: no-repeat; /* Não repetir a imagem */
+    background-position: center; /* Centraliza a imagem */
+    filter: blur(8px); /* Aplica o desfoque */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
+}
+
+/* Adiciona uma cor de sobreposição escura */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: -1; /* Coloca a sobreposição atrás do conteúdo */
+}
+
+/* Estilos do cabeçalho */
+header {
+    text-align: center;
+    color: white; /* Cor do texto */
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5em; /* Tamanho da fonte */
+}
+
+header p {
+    font-size: 1.2em; /* Tamanho da fonte */
+}
+
+/* Estilos do conteúdo principal */
+main {
+    padding: 20px;
+    text-align: center;
+    color: white; /* O texto fica branco para ser visível sobre a imagem */
+}
+
+main h2 {
+    font-size: 2em;
+}
+
+main p {
+    font-size: 1.1em;
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro e translúcido */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
